@@ -5,7 +5,7 @@ services:
     environment:
       MYSQL_USER: "admin"
       MYSQL_PASSWORD: "admin123"
-      MYSQL_DATABASE: "daily-diet-api"
+      MYSQL_DATABASE: "flask-crud"
       MYSQL_ROOT_PASSWORD: "admin123"
     ports:
       - "3306:3306"
