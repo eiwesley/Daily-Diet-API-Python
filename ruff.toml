@@ -1,0 +1,56 @@
+line-length = 80
+target-version = "py314"
+fix = true
+show-fixes = true
+exclude = ["venv", ".venv", "env", ".env", "node_modules", "__pycache__"]
+indent-width = 2
+
+[lint]
+select = [
+  "ASYNC",
+  "A",
+  "ANN",
+  "B",
+  "BLE",
+  "C4",
+  "C90",
+  "COM",
+  "E",
+  "EM",
+  "ERA",
+  "EXE",
+  "F",
+  "FBT",
+  "FIX",
+  "I",
+  "ICN",
+  "ISC",
+  "Q",
+  "RET",
+  "RSE",
+  "S",
+  "SIM",
+  "SLF",
+  "T10",
+  "T20",
+  "TC",
+  "TD",
+  "TRY",
+  "UP",
+  "W",
+  "YTT",
+  "RUF",
+  "N",
+]
+ignore = ["T201", "COM812", "ERA001", "E501", "ANN201"]
+
+[lint.per-file-ignores]
+"tests/**/*.py" = ["ANN201", "S101"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "cr-lf"
+
+[lint.isort]
+known-first-party = ["my_package"]
