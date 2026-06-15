@@ -3,6 +3,7 @@ from time import time
 
 from dotenv import load_dotenv
 from flask import Flask
+from flask_login import LoginManager
 
 from src.daily_diet_api_python.database import db
 
@@ -12,7 +13,11 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 
+login_manager = LoginManager()
 db.init_app(app)
+login_manager.init_app(app)
+
+login_manager.login_view = "login"
 
 
 @app.route("/health", methods=["GET"])
